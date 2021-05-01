@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=MyWorld
+comment1.params=
+comment1.target=MyWorld()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n
+comment2.params=
+comment2.target=Player\ getPlayer()
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ \r\n
+comment4.params=
+comment4.target=void\ spawnZombies()
+comment5.params=
+comment5.target=void\ showWave()
+comment5.text=public\ void\ wave()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ if\ (count/60\ <\ 13)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ removeObjects(getObjects(Zombie.class));\r\n\ \ \ \ \ \ \ \ \ \ \ \ showText\u200B("Wave\ 1\ Completed",\ 660,\ 660);\r\n\ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ }\ else\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ showText("Wave\ 2",\ 660,660);\r\n\ \ \ \ \ \ \ \ \ \ \ \ spawnZombies();\r\n\ \ \ \ \ \ \ \ }\r\n}
+comment6.params=
+comment6.target=void\ waveCompleted()
+comment7.params=
+comment7.target=void\ waveTime()
+comment8.params=
+comment8.target=void\ stopped()
+numComments=9
