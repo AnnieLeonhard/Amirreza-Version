@@ -89,12 +89,12 @@ public class MyWorld extends World
    
     public void showWave()
     {
-        showText("Wave" + waveNumber, 660, 660);
+        showText("Wave " + waveNumber, 660, 660);
     }
     
     public void waveCompleted()
     {
-        if(count/60 > 10 && count/60 < 15)
+        if(count/80 > 10 && count/75 < 15)
         {
             showText("Wave " + waveNumber + " Completed", 660, 660);
             removeObjects(getObjects(Zombie.class));

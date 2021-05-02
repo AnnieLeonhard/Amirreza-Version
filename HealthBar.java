@@ -12,7 +12,7 @@ public class HealthBar extends Actor
      * Act - do whatever the HealthBar wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int health = 50;
+    int health = 65;
     public HealthBar()
     {
         setImage(new GreenfootImage(52, 12));
