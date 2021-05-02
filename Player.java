@@ -9,7 +9,10 @@ public class Player extends Actor
 {
     int speed = 3;
     int time = 0;
-    int theCapacity = 7;
+    int theCapacity = 12;
+    private int count;
+    private int animateSpeed = 5;
+    private int animateImage = 0;
     /**
      * 
      */
@@ -31,6 +34,7 @@ public class Player extends Actor
         running();
         time++;
         reload();
+        animate();
     }
 
     /**
@@ -67,17 +71,22 @@ public class Player extends Actor
      */
     public void fireProjectile()
     {
+        GreenfootSound gunShot = new GreenfootSound("gun_shot.mp3");
         if (Greenfoot.mousePressed(null) && theCapacity > 0) {
         Projectile projectile =  new  Projectile();
         getWorld().addObject(projectile, getX(), getY());
         projectile.setRotation(getRotation());
         theCapacity--;
+        gunShot.play();
+        gunShot.setVolume(30);
         } 
         if (Greenfoot.isKeyDown("space") && getObjectsInRange(100, Projectile.class).isEmpty())
         {
         Projectile projectile =  new  Projectile();
         getWorld().addObject(projectile, getX(), getY());
         projectile.setRotation(getRotation());
+        gunShot.play();
+        gunShot.setVolume(30);
         }
         
     }
@@ -86,7 +95,7 @@ public class Player extends Actor
     {
         if (Greenfoot.isKeyDown("r"))
         {
-            theCapacity = 7;
+            theCapacity = 12;
         }
     }
     
@@ -108,5 +117,58 @@ public class Player extends Actor
         } else {
             speed = 3;
         }
+    }
+    
+    public void animate(){
+    if(Greenfoot.isKeyDown("w")){
+        if(count % animateSpeed == 0) {
+            if(animateImage == 20) {
+                animateImage = 0;
+            }
+            setImage("survivor-move_handgun_" + animateImage + ".png");
+            animateImage = animateImage + 1;
+            getImage().scale(78,78);
+        }
+    }
+    else if (Greenfoot.isKeyDown("a")) {
+           if (count % animateSpeed == 0) {
+                if (animateImage == 20) {
+                   animateImage = 0;
+                }
+                setImage("survivor-move_handgun_" + animateImage + ".png");
+                animateImage = animateImage + 1;
+                getImage().scale(78, 78);
+        }
+        }
+    else if (Greenfoot.isKeyDown("s")) {
+            if (count % animateSpeed == 0) {
+                if (animateImage == 20) {
+                   animateImage = 0;
+                }
+                setImage("survivor-move_handgun_" + animateImage + ".png");
+                animateImage = animateImage + 1;
+                getImage().scale(78, 78);
+        }
+        }
+    else if (Greenfoot.isKeyDown("d")) {
+            if (count % animateSpeed == 0) {
+                if (animateImage == 20) {
+                   animateImage = 0;
+                }
+                setImage("survivor-move_handgun_" + animateImage + ".png");
+                animateImage = animateImage + 1;
+                getImage().scale(78, 78);
+        }
+      }
+    else{
+        if (count % animateSpeed == 0) {
+                if (animateImage == 20) {
+                   animateImage = 0;
+                }
+                setImage("survivor-idle_handgun_" + animateImage + ".png");
+                animateImage = animateImage + 1;
+                getImage().scale(78, 78);
+        }
+    }
     }
 }
