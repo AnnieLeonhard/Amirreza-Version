@@ -43,6 +43,8 @@ public class HealthBar extends Actor
         if(health<=0){
             getWorld().setBackground("death.png");
             getWorld().showText("You Lose!: \n You survived for " + (myWorld.getPlayer().time/60) + " seconds ", getWorld().getWidth()/2, getWorld().getHeight()/2);
+            getWorld().removeObjects(getWorld().getObjects(Zombie.class));
+            getWorld().removeObjects(getWorld().getObjects(Player.class));
             Greenfoot.stop();
         }
     }

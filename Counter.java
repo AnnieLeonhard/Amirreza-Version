@@ -21,6 +21,6 @@ public class Counter extends Actor
     public void act() 
     {
         // Add your action code here.
-        setImage(new GreenfootImage("Score: " + score + "\n Cash: " + money, 40, Color.BLACK, new Color (0, 0, 0, 0)));
+        setImage(new GreenfootImage("Score: " + score + "\n Cash: " + money, 40, Color.WHITE, new Color (0, 0, 0, 0)));
     }    
 }
